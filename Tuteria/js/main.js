@@ -2,6 +2,12 @@
   'use strict';
   var app = WinJS.Application;
   var activation = Windows.ApplicationModel.Activation;
+
+  var sampleTitle = "Request Form";
+
+  var scenarios = [
+      { url: "/html/form1.html", title: "Creating a form" }
+  ];
   app.onactivated = function (args) {
     if (args.detail.kind === activation.ActivationKind.launch) {
       if (args.detail.previousExecutionState !== activation.ApplicationExecutionState.terminated) {
@@ -11,7 +17,9 @@
         // Restore application state here.
       }
       args.setPromise(WinJS.UI.processAll().then(function() {
-        // TODO: Your code here.
+          // TODO: Your code here.
+          var url = WinJS.Application.sessionState.lastUrl || scenarios[0].url;
+          WinJS.Navigation.navigate(url);
       }));
     }
   };

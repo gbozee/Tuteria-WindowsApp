@@ -1,5 +1,6 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|AnyCPU">
       <Configuration>Debug</Configuration>
@@ -40,6 +41,7 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>5c238fc1-ecfa-403f-a727-e7e580d5edf1</ProjectGuid>
+    <TypeScriptToolsVersion>1.8</TypeScriptToolsVersion>
   </PropertyGroup>
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup Condition="'$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0'">
@@ -53,15 +55,38 @@
     <TargetPlatformMinVersion>10.0.10240.0</TargetPlatformMinVersion>
     <MinimumVisualStudioVersion>$(VersionNumberMajor).$(VersionNumberMinor)</MinimumVisualStudioVersion>
     <DefaultLanguage>en-US</DefaultLanguage>
-    
     <PackageCertificateKeyFile>Tuteria_TemporaryKey.pfx</PackageCertificateKeyFile>
-    
   </PropertyGroup>
   <ItemGroup>
     <AppxManifest Include="package.appxmanifest">
       <SubType>Designer</SubType>
     </AppxManifest>
-    <Content Include="index.html" />
+    <Content Include="css\grid.css" />
+    <Content Include="css\main.css" />
+    <Content Include="default.html" />
+    <Content Include="html\form1.html" />
+    <Content Include="images\app\fonts\1-black.png" />
+    <Content Include="images\app\fonts\1-white.png" />
+    <Content Include="images\app\fonts\2-black.png" />
+    <Content Include="images\app\fonts\2-white.png" />
+    <Content Include="images\app\fonts\3-black.png" />
+    <Content Include="images\app\fonts\3-white.png" />
+    <Content Include="images\app\fonts\4-black.png" />
+    <Content Include="images\app\fonts\4-white.png" />
+    <Content Include="images\app\fonts\5-black.png" />
+    <Content Include="images\app\fonts\5-white.png" />
+    <Content Include="images\app\profile.png" />
+    <Content Include="images\app\logo.png" />
+    <Content Include="images\BadgeLogo.scale-200.png" />
+    <Content Include="images\raw\Favicon.png" />
+    <Content Include="images\raw\Tuteria Logo.png" />
+    <Content Include="images\raw\Tuteria-Logo.png" />
+    <Content Include="images\Square150x150Logo.scale-100.png" />
+    <Content Include="images\Square150x150Logo.scale-400.png" />
+    <Content Include="images\Square71x71Logo.scale-100.png" />
+    <Content Include="images\Square71x71Logo.scale-150.png" />
+    <Content Include="images\Square71x71Logo.scale-200.png" />
+    <Content Include="images\Square71x71Logo.scale-400.png" />
     <Content Include="images\LockScreenLogo.scale-200.png" />
     <Content Include="images\SplashScreen.scale-200.png" />
     <Content Include="images\Square150x150Logo.scale-200.png" />
@@ -69,17 +94,37 @@
     <Content Include="images\Square44x44Logo.targetsize-24_altform-unplated.png" />
     <Content Include="images\StoreLogo.png" />
     <Content Include="images\Wide310x150Logo.scale-200.png" />
+    <Content Include="js\browser-bundle.js" />
+    <Content Include="js\form1.js" />
     <Content Include="js\main.js" />
     <Content Include="css\default.css" />
+    <Content Include="lib\winjs-4.0.1\css\ui-dark.min.css" />
+    <Content Include="lib\winjs-4.0.1\css\ui-light.min.css" />
+    <Content Include="lib\winjs-4.0.1\fonts\Symbols.ttf" />
     <Content Include="lib\winjs-4.0.1\js\base.js" />
+    <Content Include="lib\winjs-4.0.1\js\base.min.js" />
+    <Content Include="lib\winjs-4.0.1\js\base.min.js.map" />
+    <Content Include="lib\winjs-4.0.1\js\en-US\ui.strings.js" />
     <Content Include="lib\winjs-4.0.1\js\ui.js" />
     <Content Include="lib\winjs-4.0.1\css\ui-light.css" />
     <Content Include="lib\winjs-4.0.1\css\ui-dark.css" />
-    
+    <Content Include="lib\winjs-4.0.1\js\ui.min.js" />
+    <Content Include="lib\winjs-4.0.1\js\ui.min.js.map" />
+    <Content Include="lib\winjs-4.0.1\js\WinJS.intellisense-setup.js" />
+    <Content Include="lib\winjs-4.0.1\js\WinJS.intellisense.js" />
+    <Content Include="sample-utils\footer.html" />
+    <Content Include="sample-utils\header.html" />
+    <Content Include="sample-utils\sample-utils.css" />
+    <Content Include="sample-utils\sample-utils.js" />
+    <Content Include="sample-utils\scenario-select.html" />
     <None Include="Tuteria_TemporaryKey.pfx" />
-    
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4a0dddb5-7a95-4fbf-97cc-616d07737a77}" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\$(WMSJSProjectDirectory)\Microsoft.VisualStudio.$(WMSJSProject).targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.jsproj.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.jsproj.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below then uncomment
        that target and the DisableFastUpToDateCheck PropertyGroup. 
        Other similar extension points exist, see Microsoft.Common.targets.
