@@ -1,0 +1,180 @@
+
+/*
+ * BackButton
+ *  Ensure it's the same size as the SplitViewPaneToggle
+*/
+#app .win-backbutton {
+    height: 48px;
+    width: 48px;
+    font-size: inherit;
+    line-height: inherit;
+    box-sizing: border-box;
+}
+#app .win-backbutton::before {
+    font-size: 24px;
+    line-height: 1.333;
+    vertical-align: baseline;
+}
+.win-splitview-pane-opened h1#featureLabel{
+    font: 20pt/24pt "Segoe UI";
+    font-weight: 300;
+    white-space: normal;
+    margin-left: 20px;
+    display: block;
+}
+.the_heading .title {
+    font-size: 25px;
+    left: 50px;
+    margin-top: -15px;
+    vertical-align: middle;
+    display: inline-block;
+}
+.the_heading img{
+    height: 24px;
+    width: 24px;
+    margin-right: 7px;
+    display: inline-block;
+}
+.win-splitviewcommand-icon{
+    background-size: contain;
+}
+
+#contentWrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+#statusBox {
+    flex-shrink: 0;
+}
+
+#contentHost {
+    margin: 10px;
+    padding: 0px 10px 10px 10px;
+    height: 100%;
+    overflow-y: auto;
+}
+@media(min-width: 768px) and (max-width: 992px){  
+  #contentHost {
+      padding: 0px 20px 10px 20px;
+  }
+}
+@media(min-width: 993px){
+  #contentHost{
+    padding: 0px 42px 10px 42px;
+  }
+}
+.main {
+    /*background:#0071c1;*/
+}
+.main .title {
+  color: #fff;
+  background: #0071c1;
+  text-align: center;
+  font-weight: 700;
+  line-height: 1.2em;
+  padding: 1em;
+}
+.section {
+  position: relative;
+  width: 100%;
+  border-bottom: 5px solid #0071c1;
+  border-left: 2px solid #0071c1;
+  border-right: 2px solid #0071c1;
+}
+.section button {
+  position: absolute;
+  right: 0;
+  margin: 0;
+  padding: 0;
+  height: 3em;
+  width: 3em;
+  outline: 0;
+  border: 0;
+  background: none;
+  text-indent: -9999%;
+  pointer-events: none;
+}
+.section button:before {
+  content: '';
+  display: block;
+  position: absolute;
+  height: 12px;
+  width: 4px;
+  border-radius: .3em;
+  background:#0071c1;
+  transform-origin: 50%;
+  top: 50%;
+  left: 50%;
+  transition: all .25s ease-in-out;
+  transform: translate(75%, -50%) rotate(45deg);
+}
+.section button:after {
+  content: '';
+  display: block;
+  position: absolute;
+  height: 12px;
+  width: 4px;
+  border-radius: .3em;
+  background:#0071c1;
+  transform-origin: 50%;
+  top: 50%;
+  left: 50%;
+  transition: all .25s ease-in-out;
+  transform: translate(-75%, -50%) rotate(-45deg);
+}
+
+.section.open button:before, .section.open button:after {
+  height: 14px;
+}
+.section.open button:before {
+  transform: translate(0%, -50%) rotate(-45deg);
+}
+.section.open button:after {
+  transform: translate(0%, -50%) rotate(45deg);
+}
+.section.open .articlewrap {
+  height: auto;
+}
+
+.articlewrap {
+  height: 0;
+  overflow: hidden;
+  transition: all .2s ease-in;
+}
+
+.sectionhead {
+  width: 90%;
+  overflow: hidden;
+  background: white;
+  cursor: pointer;
+  font-weight: 700;
+  color: #888;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  padding: 1em;
+  padding-right: 2.1em;
+}
+
+.article {
+  padding: 1em;
+  color: #333;
+  line-height: 1.3;
+}
+
+.row-space-10{
+    margin-bottom: 10px;
+}
+.win-textarea{
+  width: 100%;
+  height: 110px;
+}
+.win-splitview.win-splitview-pane-opened.win-splitview-placementleft .win-splitview-pane, .win-splitview.win-splitview-pane-opened.win-splitview-placementright .win-splitview-pane {
+    width: 230px;
+}
+@media(max-width: 768px){
+  .col-group {
+    padding: 0 5px;
+}
+}
